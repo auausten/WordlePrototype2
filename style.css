@@ -1,0 +1,101 @@
+html,
+body {
+    background: #121213; /* Makes the background colour #121213, which is the same background colour as the official Wordle game */
+}
+
+/* Global CSS variable for styling */
+:root {
+    --default: #121213;
+    --absent: #3a3a3c;
+    --wrong: #b59f3b;
+    --right: #538d4e;
+}
+
+h1 {
+    color: white;
+    font-family: Hind;
+    font-size: 50px;
+}
+
+h3 {
+    color: white;
+    font-family: Hind;
+}
+
+p {
+    color: white;
+    font-family: Hind;
+}
+
+/* Styling for keyboard keys */
+.kbBtn {
+    height: 60px;
+    width: 48px;
+    font-family: Hind;
+    color: white;
+    font-size: 24px;
+    background: gray;
+    border: 2px solid #121213;
+    border-radius: 8px;
+    text-transform: uppercase;
+}
+
+#game {
+    display: grid;
+    place-items: center;
+    width: 350px;
+    height: 420px;
+}
+
+/* Creates template for boxes to fall into grid (5x6) */
+.grid {
+    display: grid;
+    grid-template-rows: repeat(6, auto);
+    grid-template-columns: repeat(5, auto);
+}
+
+.box {
+    /* Box */
+    width: 55px;
+    height: 55px;
+    border: 2px solid var(--absent);
+    margin: 4px;
+
+    /* Text */
+    color: white;
+    text-transform: uppercase;
+    display: grid;
+    place-items: center;
+    font-family: Hind;
+    font-size: 36px;
+}
+
+/* Makes colour of absent boxes grey */
+.box.absent {
+    background: var(--absent);
+}
+
+/* Makes colour of wrong boxes yellow */
+.box.wrong {
+    background: var(--wrong);
+}
+
+/* Makes colour of right boxes green */
+.box.right {
+    background: var(--right);
+}
+
+/* Makes colour of absent buttons grey */
+.kbBtn.absent {
+    background: var(--absent);
+}
+
+/* Makes colour of wrong buttons yellow */
+.kbBtn.wrong {
+    background: var(--wrong);
+}
+
+/* Makes colour of right buttons green */
+.kbBtn.right {
+    background: var(--right);
+}
